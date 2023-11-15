@@ -1,0 +1,63 @@
+﻿@model Hotel
+@{
+    ViewData["Title"] = "Edit Hotel Information";
+}
+
+<div class="container" dir="rtl">
+    <div class="row m-4 text-center">
+        <h4 class="alert alert-success">تعديل بيانات الفندق</h4>
+    </div>
+    <div class="row">
+        <form asp-action="Update" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="row m-4">
+                <div class="col">
+                    <label for="Name">اسم الفندق </label>
+                    <input type="text" id="Name" name="Name" class="form-control" asp-for="@Model.Name" required />
+
+                </div>
+            </div>
+            <div class="row m-4">
+                <div class="col">
+                    <label for="Address"> العنوان </label>
+                    <input type="text" id="Address" name="Address" class="form-control" asp-for="@Model.Address" required />
+
+                </div>
+
+
+                <div class="col">
+                    <label for="City">المدينة </label>
+                    <input type="text" id="City" name="City" class="form-control" asp-for="@Model.City" required />
+
+                </div>
+            </div>
+            <div class="row m-4">
+                <div class="col">
+                    <label for="Email"> الايميل </label>
+                    <input type="email" id="Email" name="Email" class="form-control" asp-for="@Model.Email" required />
+
+                </div>
+
+                <div class="col">
+                    <label for="Phone"> رقم الهاتف </label>
+                    <input type="tel" id="Phone" name="Phone" class="form-control" asp-for="@Model.Phone" required />
+
+                </div>
+            </div>
+            <div class="row m-4">
+                <div class="col">
+                    <label for="Images">الصورة </label>
+                    <input type="text" id="Images" name="Images" class="form-control" asp-for="@Model.Images" required />
+
+                </div>
+            </div>
+            <div class="row m-4 text-center">
+                <div class="col">
+                    
+                        <button class="btn btn-success" type="submit">حفظ</button>
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>

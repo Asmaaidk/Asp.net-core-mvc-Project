@@ -1,0 +1,100 @@
+﻿@model RoomDetails
+@{
+    ViewData["Title"] = "Edit Room Detailes";
+}
+
+
+<div class="container col-sm-10 bg-secondary" dir="rtl">
+		<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+			<!--begin::Content wrapper-->
+			<div class="d-flex flex-column flex-column-fluid">
+				
+				<!--begin::Content-->
+				<div id="kt_app_content p-10" class="app-content flex-column-fluid">
+					<!--begin::Content container-->
+					<div id="kt_app_content_container p-5" class="app-container container-xxl">
+						<div class="card">
+						<!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                <div class="row m-4 text-center">
+                                    <h4 style="font-family:cairo ; font-weight:bolder" class="mt-5">تعديل بيانات الفندق</h4>
+                                </div>
+                                <div class="row">
+                                <form asp-action="UpdateDetailes" asp-controller="Dashboard" method="post">
+                                        <input type="hidden" asp-for="@Model.Id" />
+									<div class="row m-4" style="font-family:cairo">
+										<div class="col">
+											<label for="IdHotel" class="required fs-6 fw-semibold mb-2">رقم الفندق </label>
+											<input type="text" id="IdHotel" name="IdHotel" class="form-control " asp-for="@Model.IdHotel" required />
+
+										</div>
+									</div>
+
+									<div class="row m-4">
+										<div class="col">
+											<label for="IdRoom" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo"> رقم الغرفة </label>
+											<input type="text" id="IdRoom" name="IdRoom" class="form-control form-control-solid" asp-for="@Model.IdRoom" required />
+
+										</div>
+
+										</div>
+										<div class="row m-4">
+											<div class="col">
+												<label for="Features" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo"> المواصفات </label>
+												<input type="text" id="Features" name="Features" class="form-control form-control-solid" asp-for="@Model.Features" required />
+
+											</div>
+
+
+											<div class="col">
+												<label for="Food" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo">الوجبات </label>
+												<input type="text" id="Food" name="Food" class="form-control form-control-solid" asp-for="@Model.Food" required />
+
+											</div>
+										</div>
+										<div class="row m-4">
+											<div class="col">
+												<label for="Image1" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo"> الصورة 1 </label>
+												<input type="text" id="Image1" name="Image1" class="form-control form-control-solid" asp-for="@Model.Image1" required />
+
+											</div>
+
+
+											<div class="col">
+												<label for="Image2" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo">الصورة 2 </label>
+												<input type="text" id="Image2" name="Image2" class="form-control form-control-solid" asp-for="@Model.Image2" required />
+
+											</div>
+										</div>
+										<div class="row m-4">
+											<div class="col">
+												<label for="Image3" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo"> الصورة 3 </label>
+												<input type="text" id="Image3" name="Image3" class="form-control form-control-solid" asp-for="@Model.Image3" required />
+
+											</div>
+
+
+											<div class="col">
+												<label for="Image4" class="required fs-6 fw-semibold mb-2" style="font-family:Cairo">الصورة 4 </label>
+												<input type="text" id="Image4" name="Image4" class="form-control form-control-solid" asp-for="@Model.Image4" required />
+
+											</div>
+										</div>
+                                        <div class="row m-4 text-center">
+                                            <div class="col">
+
+                                                <button class="btn btn-primary" type="submit" style="font-family:cairo">حفظ</button>
+                    
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Hotel>
+@{
+
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+    <div class="container" dir="rtl">
+        <div class="row m-4 text-center">
+            <h4>إضافة فندق</h4>
+        </div>
+        <div class="row">
+            <form asp-action="CreateHotelRecord" asp-controller="Home" method="post">
+                <div class="row m-4">
+                    <div class="col">
+                        <label for="Name">اسم الفندق </label>
+                            <input type="text" id="Name" name="Name" class="form-control" required />
+                        
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col">
+                        <label for="Address"> العنوان </label>
+                    <input type="text" id="Address" name="Address" class="form-control" required />
+                        
+                    </div>
+                
+                
+                    <div class="col">
+                        <label for="City">المدينة </label>
+                    <input type="text" id="City" name="City" class="form-control" required />
+                        
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col">
+                        <label for="Email"> الايميل </label>
+                    <input type="email" id="Email" name="Email" class="form-control" required />
+                        
+                    </div>
+                
+                    <div class="col">
+                        <label for="Phone"> رقم الهاتف </label>
+                    <input type="tel" id="Phone" name="Phone" class="form-control" required />
+                    
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col">
+                        <label for="Images">الصورة </label>
+                    <input type="text" id="Images" name="Images" class="form-control" required />
+                        
+                    </div>
+                </div>
+                <div class="row m-4 text-center">
+                    <div class="col">
+                        
+                            <button class="btn btn-success" type="submit">حفظ</button>
+                        
+                    </div>
+                </div>               
+            </form>
+    </div>
+
+        <div class="row m-4 text-center">
+            <h4>قائمة الفنادق</h4>
+        </div>
+        <div class="row m-4">
+            <div class="col col-sm-4">
+                <form asp-controller="Home" asp-action="Index" method="post">
+                    <div class="row">
+                        <div class="col col-sm-8">
+                            <input name="City" class="form form-control" type="text" required placeholder="ادخل اسم المدينة" />
+                        </div>
+                        <div class="col col-sm-4">
+                            <button class="btn btn-success form-control" type="submit">ابحث</button>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr class="text-center">
+                <th>رقم الفندق</th>
+                <th>اسم الفندق</th>
+                <th>العنوان</th>
+                <th>المدينة</th>
+                <th>الايميل</th>
+                <th>رقم الهاتف</th>
+                <th colspan="2">الاجراء</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <tr class="text-center">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.City</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Email</td>
+                    <td><a asp-action="Delete" asp-route-id="@item.Id" class="text-danger"><i class="fa fa-trash"></i></a></td>
+                    <td><a asp-action="Edit" asp-route-id="@item.Id" class="text-success"><i class="fa fa-edit"></i></a></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        
+    </div>
+

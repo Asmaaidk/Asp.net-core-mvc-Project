@@ -1,0 +1,83 @@
+﻿@model Hotel
+@{
+    ViewData["Title"] = "Edit Hotel Information";
+}
+
+
+<div class="container col-sm-10 bg-secondary" dir="rtl">
+		<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+			<!--begin::Content wrapper-->
+			<div class="d-flex flex-column flex-column-fluid">
+				
+				<!--begin::Content-->
+				<div id="kt_app_content p-10" class="app-content flex-column-fluid">
+					<!--begin::Content container-->
+					<div id="kt_app_content_container p-5" class="app-container container-xxl">
+						<div class="card">
+						<!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                <div class="row m-4 text-center">
+                                    <h4 style="font-family:cairo ; font-weight:bolder" class="mt-5">تعديل بيانات الفندق</h4>
+                                </div>
+                                <div class="row">
+                                    <form asp-action="Update" asp-controller="Dashboard" method="post">
+                                        <input type="hidden" asp-for="@Model.Id" />
+                                        <div class="row m-4" style="font-family:cairo">
+                                            <div class="col">
+                                                <label for="Name" class="required fs-6 fw-semibold mb-2">اسم الفندق </label>
+                                                <input type="text" id="Name" name="Name" class="form-control " asp-for="@Model.Name" required />
+
+                                            </div>
+                                        </div>
+                                        <div class="row m-4" style="font-family:cairo">
+                                            <div class="col">
+                                                <label for="Address" class="required fs-6 fw-semibold mb-2">  العنوان </label>
+                                                <input type="text" id="Address" name="Address" class="form-control " asp-for="@Model.Address" required />
+
+                                            </div>
+
+
+                                            <div class="col">
+                                                <label for="City" class="required fs-6 fw-semibold mb-2">المدينة </label>
+                                                <input type="text" id="City" name="City" class="form-control " asp-for="@Model.City" required />
+
+                                            </div>
+                                        </div>
+                                        <div class="row m-4" style="font-family:cairo">
+                                            <div class="col">
+                                                <label for="Email" class="required fs-6 fw-semibold mb-2"> البريد الالكتروني </label>
+                                                <input type="email" id="Email" name="Email" class="form-control " asp-for="@Model.Email" required />
+
+                                            </div>
+
+                                            <div class="col">
+                                                <label for="Phone" class="required fs-6 fw-semibold mb-2"> رقم الهاتف </label>
+                                                <input type="tel" id="Phone" name="Phone" class="form-control " asp-for="@Model.Phone" required />
+
+                                            </div>
+                                        </div>
+                                        <div class="row m-4" style="font-family:cairo">
+                                            <div class="col">
+                                                <label for="Images" class="required fs-6 fw-semibold mb-2">الصورة </label>
+                                                <input type="text" id="Images" name="Images" class="form-control " asp-for="@Model.Images" required />
+
+                                            </div>
+                                        </div>
+                                        <div class="row m-4 text-center">
+                                            <div class="col">
+
+                                                <button class="btn btn-primary" type="submit" style="font-family:cairo">حفظ</button>
+                    
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
