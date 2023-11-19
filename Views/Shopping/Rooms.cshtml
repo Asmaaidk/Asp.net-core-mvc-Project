@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Rooms>
+@{
+    Layout = "~/Views/Shared/_LayoutShopping.cshtml";
+    ViewData["Title"] = "Rooms";
+}
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <img src="~/images/@item.Image" class="img-thumbnail img-responsive" />
+                    </div>
+                    <div class="col col-sm-7">
+                        <h3>نوع الغرفة @item.Type</h3>
+                        <br>
+                        <p style="color:#8FB2DC">السعر  -- @item.Price ريال سعودي </p>
+                    </div>
+                    <div class="col col-sm-2 align-self-end">
+                        <a asp-action="Invoice" asp-route-id="@item.Id" style="width:90%" class="site-btn">احجز الغرفة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

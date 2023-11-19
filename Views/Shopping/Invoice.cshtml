@@ -1,0 +1,65 @@
+﻿@model Invoice
+@{
+    Layout = "~/Views/Shared/_LayoutShopping.cshtml";
+    ViewData["Title"] = "Invoice";
+}
+<div class="card">
+    <div class="card-body mx-4">
+        <div class="container">
+            <p class="my-5 mx-5" style="font-size: 30px;">شكرأ لاستخدامك لخدماتنا</p>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li class="text-black">@Model.UserId</li>
+                    <li class="text-muted mt-1"><span class="text-black">Invoice</span> @Model.Id</li>
+                    <li class="text-black mt-1">@Model.DateInvoice</li>
+                </ul>
+                <hr>
+                <div class="col-xl-10">
+                    <p>الخصم</p>
+                </div>
+                <div class="col-xl-2">
+                    <p class="float-end">
+                        @Model.Discount
+                    </p>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xl-10">
+                    <p>الضريبة المضافة</p>
+                </div>
+                <div class="col-xl-2">
+                    <p class="float-end">
+                        @Model.Tax
+                    </p>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xl-10">
+                    <p>المجموع الجزئي</p>
+                </div>
+                <div class="col-xl-2">
+                    <p class="float-end">
+                        @Model.Net
+                    </p>
+                </div>
+                <hr style="border: 2px solid black;">
+            </div>
+            <div class="row text-black">
+
+                <div class="col-xl-12">
+                    <p class="float-end fw-bold">
+                        المجموع: $@Model.Total
+                    </p>
+                </div>
+                <hr style="border: 2px solid black;">
+            </div>
+            <div class="text-center" style="margin-top: 90px;">
+                <a><u class="text-info">تم الحجز</u></a>
+                <p>متمنين لكم طيب الإقامة </p>
+            </div>
+
+        </div>
+    </div>
+</div>

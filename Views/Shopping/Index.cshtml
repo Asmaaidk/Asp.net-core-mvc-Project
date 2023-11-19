@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Hotel>
+@{
+    Layout = "~/Views/Shared/_LayoutShopping.cshtml";
+    ViewData["Title"] = "Home";
+}
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col col-sm-3">
+                        <img src="~/images/@item.Images" class="img-thumbnail img-responsive" />
+                    </div>
+                    <div class="col col-sm-7">
+                        <h3>@item.Name</h3>
+                        <br>
+                        <p style="color:#8FB2DC">@item.Address -- @item.City</p>
+                        </div>
+                    <div class="col col-sm-2 align-self-end">
+                        <a asp-action="Rooms" asp-route-id="@item.Id"  style="width:90%" class="site-btn">للحجز</a>
+                       </div>
+                </div>
+            </div>
+        </div>
+       
+    }  
+</div>

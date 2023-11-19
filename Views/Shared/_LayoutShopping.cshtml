@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <title>@ViewData["Title"] - Tuwaiq Training Camp</title>
+		<meta charset="utf-8" />
+ 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Icons  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <!-- stylesheet  -->
+        <link href="~/css/style.css" rel="stylesheet" />
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+     
+        <!-- Fonts  -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
+    
+ 
+</head>
+    <body>
+        <!-- header section starts  -->
+
+        <header class="header" dir="ltr">
+            <a href="#" class="logo">
+                @* <img src="~/images/logo.png" /> *@
+            <i><img src="~/images/logo.png" /></i>
+        </a>
+
+           
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fas fa-user" id="login-btn"></div>
+            </div>
+
+            <form action="" class="search-form">
+                <input type="search" id="search-box" placeholder="search here..." />
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="shopping-cart">
+                <div class="box">
+                    <i class="fas fa-trash"></i>
+                    <img src="https://raw.githubusercontent.com/STRIDER1512/FarmBuddy/main/FarmBuddy/images/cart-img-1.png" alt="" />
+                    <div class="content">
+                        <h3>watermelon</h3>
+                        <span class="price">₹44.99/-</span>
+                        <span class="quantity">qty : 1</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-trash"></i>
+                    <img src="https://raw.githubusercontent.com/STRIDER1512/FarmBuddy/main/FarmBuddy/images/cart-img-2.png" alt="" />
+                    <div class="content">
+                        <h3>onion</h3>
+                        <span class="price">$24.99/-</span>
+                        <span class="quantity">qty : 1</span>
+                    </div>
+                </div>
+                <div class="box">
+                </div>
+                <div class="total">total : $68.98/-</div>
+                <a href="" class="btn">checkout</a>
+            </div>
+
+
+            <form action="" class="login-form">
+                <h3>login now</h3>
+                <input type="email" placeholder="your email" class="box" />
+                <input type="password" placeholder="your password" class="box" />
+                <p>forget your password <a href="#">click here</a></p>
+                <p>don't have an account <a href="#sign-up-form">create now</a></p>
+                <input type="submit" value="login now" class="btn" />
+            </form>
+        </header>
+        <section class="home" id="home">
+        <div class="content">
+        
+            @RenderBody()
+        </div>
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>طويق للحجوزات</h3>
+                <p>
+                    أسهل طريق للبحث عن أفضل الحجوزات بأقل الأسعار
+                </p>
+                <div class="share">
+                    <a href="mailto: Thotels@T.com" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                    <a href="#" class="fas fa-map-marker-alt"></a>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="box">
+                <h3>روابط سريعة</h3>
+                <a href="#" class="links">
+                    <i class="fas fa-arrow-left"></i> الصفحة الرئيسية
+                </a>
+                <a href="#" class="links">
+                    <i class="fas fa-arrow-left"></i> عن طويق للحجوزات
+                </a>
+                <a href="#" class="links">
+                    <i class="fas fa-arrow-left"></i> تواصل معنا
+                </a>
+                
+
+
+
+
+            </div>
+
+            <div class="box">
+                <h3>الرسائل الإخبارية</h3>
+                <p>اشترك معنا لتحصل على آخر العروض والأخبار</p>
+                <input type="email" placeholder="ادخل بريدك الالكتروني" class="email" />
+                <input type="submit" value="اشترك الآن" class="site-btn" />
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section ends -->
+    </body>
+</html>
+<script>
+    let searchForm = document.querySelector('.search-form');
+
+    document.querySelector('#search-btn').onclick = () => {
+        searchForm.classList.toggle('active');
+        shoppingCart.classList.remove('active');
+        loginForm.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+
+    let shoppingCart = document.querySelector('.shopping-cart');
+
+    document.querySelector('#cart-btn').onclick = () => {
+        shoppingCart.classList.toggle('active');
+        searchForm.classList.remove('active');
+        loginForm.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+
+    let loginForm = document.querySelector('.login-form');
+
+    document.querySelector('#login-btn').onclick = () => {
+        loginForm.classList.toggle('active');
+        searchForm.classList.remove('active');
+        shoppingCart.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+
+    let navbar = document.querySelector('.navbar');
+
+    document.querySelector('#menu-btn').onclick = () => {
+        navbar.classList.toggle('active');
+        searchForm.classList.remove('active');
+        shoppingCart.classList.remove('active');
+        loginForm.classList.remove('active');
+    }
+
+    window.onscroll = () => {
+        searchForm.classList.remove('active');
+        shoppingCart.classList.remove('active');
+        loginForm.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+
+    var swiper = new Swiper(".product-slider", {
+        loop: true,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 7500,
+            disableOnInteraction: false,
+        },
+        centeredSlides: true,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1020: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    var swiper = new Swiper(".about-slider", {
+        loop: true,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 7500,
+            disableOnInteraction: false,
+        },
+        centeredSlides: true,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1020: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+</script>
